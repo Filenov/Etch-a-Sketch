@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px; /* 16 квадратов × 30px */
+    height: 480px;
+    background-color: white;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.grid-square {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Важно: включает границы в расчет размеров */
+}
+
+.grid-square:hover {
+    background-color: #e0e0e0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
