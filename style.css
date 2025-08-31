@@ -33,12 +33,11 @@ body {
     font-size: 1.2rem;
 }
 
-.current-color {
+#grid-size-info {
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 2px 8px;
-    background-color: white;
     border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .controls {
@@ -69,11 +68,23 @@ button:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+button:active {
+    transform: translateY(0);
+}
+
+#change-grid-btn {
+    background-color: #ff9800;
+}
+
+#change-grid-btn:hover {
+    background-color: #e68a00;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 480px;
-    height: 480px;
+    width: 960px;
+    height: 960px;
     background-color: white;
     border: 2px solid #333;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -82,14 +93,13 @@ button:hover {
 }
 
 .grid-square {
-    width: 30px;
-    height: 30px;
+    box-sizing: border-box;
     border: 1px solid #eee;
     transition: background-color 0.2s ease;
 }
 
 .grid-square:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     z-index: 1;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -102,18 +112,29 @@ button:hover {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .container {
-        width: 320px;
-        height: 320px;
+        width: 600px;
+        height: 600px;
     }
     
-    .grid-square {
-        width: 20px;
-        height: 20px;
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 400px;
+        height: 400px;
     }
     
     .header h1 {
         font-size: 1.8rem;
+    }
+    
+    button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
     }
 }
