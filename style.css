@@ -1,51 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #333;
+    padding: 20px;
 }
 
-h1 {
+.header {
+    text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+.current-color {
+    font-weight: bold;
+    padding: 2px 8px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 480px; /* 16 квадратов × 30px */
+    width: 480px;
     height: 480px;
     background-color: white;
     border: 2px solid #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .grid-square {
-    width: 28px;
-    height: 28px;
-    border: 1px solid #ddd;
-    box-sizing: border-box; /* Важно: включает границы в расчет размеров */
+    width: 30px;
+    height: 30px;
+    border: 1px solid #eee;
+    transition: background-color 0.2s ease;
 }
 
 .grid-square:hover {
-    background-color: #e0e0e0;
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
+.footer {
+    margin-top: 25px;
+    text-align: center;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: #45a049;
+@media (max-width: 600px) {
+    .container {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .grid-square {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
 }

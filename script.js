@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const gridContainer = document.getElementById('grid-container');
     const resetButton = document.getElementById('reset-button');
+    const randomColorButton = document.getElementById('random-color-button');
+    const currentColorSpan = document.getElementById('current-color');
     const gridSize = 16; // 16x16 сетка
+    
+    let currentColor = '#333333';
     
     // Функция для создания сетки
     function createGrid() {
@@ -13,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const square = document.createElement('div');
             square.classList.add('grid-square');
             
-            // Добавляем обработчик события для изменения цвета при клике
-            square.addEventListener('click', function() {
-                this.style.backgroundColor = getRandomColor();
+            // Добавляем обработчик события для изменения цвета при наведении
+            square.addEventListener('mouseover', function() {
+                this.style.backgroundColor = currentColor;
             });
             
             gridContainer.appendChild(square);
@@ -38,6 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
         squares.forEach(square => {
             square.style.backgroundColor = '';
         });
+    });
+    
+    // Обработчик события для кнопки случайного цвета
+    randomColorButton.addEventListener('click', function() {
+        currentColor = getRandomColor();
+        currentColorSpan.textContent = currentColor;
     });
     
     // Создаем сетку при загрузке страницы

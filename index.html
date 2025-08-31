@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сетка 16x16 квадратов</title>
+    <title>Интерактивная сетка 16x16</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Сетка квадратных блоков 16x16</h1>
+    <div class="header">
+        <h1>Интерактивная сетка 16x16</h1>
+        <p>Наведите курсор, чтобы рисовать. Цвет: <span id="current-color" class="current-color">#333333</span></p>
+    </div>
+    
+    <div class="controls">
+        <button id="reset-button">Очистить сетку</button>
+        <button id="random-color-button">Случайный цвет</button>
+    </div>
+    
     <div id="grid-container" class="container"></div>
-    <button id="reset-button">Очистить сетку</button>
+    
+    <div class="footer">
+        <p>Используйте кнопку случайного цвета для изменения цвета рисования</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
